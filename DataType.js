@@ -10,3 +10,7 @@ let ans ; //undefine  data type
 // bigint 
 console.log(typeof undefined)// undefine
 console.log(typeof null) //object 
+// conering datatype 
+//"33"=> 33
+// "33dd"=>Nan
+//true=> 1
