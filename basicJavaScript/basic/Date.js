@@ -8,4 +8,4 @@ console.log(myDate.getTime());
 console.log(myDate.getMinutes());
 console.log(myDate.getHours());
 let myDat = new Date(2023, 0, 23)
-console.log(myDat)
+console.log(myDat);
