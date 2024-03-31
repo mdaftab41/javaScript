@@ -19,6 +19,7 @@ console.log(s.trim());// remove first and last whitespace
 console.log(s.replace(" " , "/")) // remove (first sting) whitespace by /
 
 // math in javav script 
+
 console.log(Math);
 console.log(Math.abs(-8));
 console.log(Math.round(6.46));

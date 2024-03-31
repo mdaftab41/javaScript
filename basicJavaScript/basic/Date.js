@@ -3,7 +3,7 @@ console.log(myDate);
 console.log(myDate.toString());
 console.log(myDate.toTimeString());
 console.log(myDate.toLocaleString());
-console.log(myDate.getDate());
+console.log(myDate.getDate());  
 console.log(myDate.getTime());
 console.log(myDate.getMinutes());
 console.log(myDate.getHours());
