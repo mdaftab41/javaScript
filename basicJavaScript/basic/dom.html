@@ -35,9 +35,14 @@
         <li>three</li>
       </ul>
    <ol>
-    <li>Mango</li>
+    <li >Mango</li>
     <li>Orange</li>
     <li>Banana</li>
+   </ol>
+   <ol>
+    <li class="ol-list">Mango</li>
+    <li class="ol-list">Orange</li>
+    <li class="ol-list">Banana</li>
    </ol>
     </div>
      
@@ -45,7 +50,7 @@
       document.getElementById("title").style.color = "red";
       //document.getElementById('ab').style.color='green'
 
-      // provide a array
+      // provide a html collection  
       var elements = document.getElementsByClassName("change");
       for (var i = 0; i < elements.length; i++) {
         elements[i].style.color = "green";
@@ -65,12 +70,29 @@
       document.getElementById("text").style.margin="20px"// you can also set class 
       const myUl =document.querySelector('ul') ;
       myUl.style.backgroundColor="red"
+      // nodeList
       let muOl= document.querySelectorAll('li') ;//pronide a nodeList
       muOl[3].style.backgroundColor='blue'
       muOl[1].style.backgroundColor='blue'
       muOl.forEach((l)=>{
         l.style.padding='10px'
       })
+      muOl[0].innerHTML='we change the innerHTML'
+      var myL=document.getElementsByClassName("ol-list");
+      // not working
+       myL[0].innerHTML='Monday';
+       myL[1].innerHTML='Tuesday';
+       myL[2].innerHTML='Wednesday';
+     //Iterate over the collection using a traditional loop
+   for (var i = 0; i < myL.length; i++) {
+    myL[i].style.color = 'green';
+    }
+    //convering into Array
+    const arr =Array.from(myL);
+    arr.forEach((li)=>{
+        li.style.backgroundColor='white';
+    })
+      
        
       
     </script>
