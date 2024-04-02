@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai and Code</title>
+</head>
+<body style="background-color: black; color: white;">
+    
+</body>
+<script>
+    const div = document.createElement('div'); // create element in body or in html document
+    console.log(div);
+    div.className="main" // add class name to div
+   div.id="myId" // Add Id in div 
+   //div.id=Math.round(Math.random()*10+1);// generate a random id
+div.setAttribute("title", 'generated title')
+div.style.backgroundColor="green"
+div.style.padding="20px"
+//div.innerText="Working on Dom in javascript"  //over write the text
+const addText=document.createTextNode("DOM : How to create and add element in document")
+const h1 =document.createElement('h1')
+const btn =document.createElement('button')
+btn.setAttribute("type", "button")
+btn.textContent='Click me' 
+btn.style.borderRadius='30px'
+btn.style.color='red'
+btn.style.height='30px'
+btn.style.width='100px'
+btn.style.background='yellow'
+h1.style.color="red"
+//const btn1 =document.createTextNode("Button");
+const addH1 =document.createTextNode("Welcome from Dom");
+//btn.appendChild(btn1)
+div.appendChild(addText)
+h1.appendChild(addH1)
+div.appendChild(h1)
+div.appendChild(btn)
+document.body.appendChild(div)
+
+</script>
+</html> 
