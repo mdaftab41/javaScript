@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chai or Code || DOM</title>
+  </head>
+  <body style="background-color: #212121; color: white">
+    <ul class="language">
+      <li style="font-size: 35px; color: chartreuse">JavaScript</li>
+    </ul>
+  </body>
+  <script>
+    // travel complete tree to Add node
+    function addLanguage(langName) {
+      const li = document.createElement("li");
+      li.innerHTML = `${langName}`; // all element travel
+      document.querySelector(".language").appendChild(li);
+      li.style.color = "red";
+      li.style.fontSize = "30px";
+    }
+    addLanguage("python");
+    addLanguage("HTML");
+    // optimised solution to add node
+    function addOptiLanguage(langName) {
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(langName));
+      document.querySelector(".language").appendChild(li);
+      li.style.color = "green";
+      li.style.fontSize = "25px";
+    }
+    addOptiLanguage("goland");
+    addOptiLanguage("Java");
+
+    // Editing
+    const secLan = document.querySelector("li:nth-child(2)");
+    //secLan.innerHTML="Mojo"
+    const newLi = document.createElement("li"); // creating new element
+    newLi.textContent = "Mojo";
+    secLan.replaceWith(newLi);
+    newLi.style.color = "red";
+    newLi.style.fontSize = "30px";
+    //Editi
+    const FirLan = document.querySelector("li:first-child");
+    FirLan.outerHTML = "<li>TypeScript</li>";
+    // Re-select the updated element
+    const updatedFirLan = document.querySelector("li:first-child");
+    updatedFirLan.style.color = "chartreuse";
+    updatedFirLan.style.fontSize = "35px";
+    // Removing Element
+    const lasLan = document.querySelector("li:last-child");
+    lasLan.remove();
+  </script>
+</html>
