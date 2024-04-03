@@ -1,11 +1,11 @@
-const randomNumber = parseInt(Math.random() * 10 + 1); //use to generate a random number
+let randomNumber = parseInt(Math.random() * 100 + 1); //use to generate a random number
 const submit = document.querySelector(".guessSubmit");
 const userInput = document.querySelector("#guessField");
 const guessSlot = document.querySelector(".guesses");
 const remaning = document.querySelector(".lastResult");
 const lowOrHi = document.querySelector(".lowOrHi");
-const startOver = document.querySelector(".resultparas");
-const p = document.createElement("p");
+const startOver = document.querySelector('.resultParas')
+const p = document.createElement('p');// global scope
 
 let preGuess = []; //empty array to store user guess value
 let numGuess = 1; //default value
@@ -29,7 +29,7 @@ function validateGuess(guess) {
     alert("Please enter a number less than 100");
   } else {
     preGuess.push(guess); // store the guess number into array
-    if (numGuess === 11) {
+    if (numGuess === 10) {
       displayGuess(guess);
       displayMassage(`Game over.  Random number was ${randomNumber} `);
       endGame(); //Stop the game
@@ -53,19 +53,42 @@ function cheackGuess(guess) {
 
 function displayGuess(guess) {
   userInput.value = "";
-  guessSlot.innerHTML += `${guess}`;
+  guessSlot.innerHTML += `${guess},  `;
   numGuess++; // updating the value
   remaning.innerHTML = `${11 - numGuess}`;
 }
 
 function displayMassage(massage) {
-  //
+  lowOrHi.innerHTML=`<h2>${massage}</h2>`
 }
 
 function endGame() {
-  //
+  userInput.value='';//clean the user inpute
+  userInput.setAttribute('disabled', '') //disable the inpute field
+  p.classList.add('button')// Adding a button classList to behaive like button
+  p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
+  p.style.backgroundColor = 'green';
+  p.style.margin = '0 7rem';
+  p.style.borderRadius = '3rem';
+  p.style.height = '3rem';
+  p.style.textAlign = 'center';
+  p.style.lineHeight = '3rem';
+  startOver.appendChild(p);//adding new child
+  playGame= false ;
+  newGame();
 }
 
 function newGame() {
-  //
+ const newGameButton = document.querySelector('#newGame');
+ newGameButton.addEventListener('click' , function(e){
+    randomNumber = parseInt(Math.random() * 100 + 1);
+    preGuess = []; //empty array to store user guess value
+    numGuess = 1; //default value
+    guessSlot.innerHTML = '';
+    remaning.innerHTML = `${11 - numGuess}`;
+    userInput.removeAttribute('disabled');
+    startOver.removeChild(p);
+    playGame = true;
+   
+ })
 }

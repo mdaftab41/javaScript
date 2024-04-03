@@ -72,15 +72,17 @@ html {
     box-sizing: border-box;
     text-align: center;
     width: 450px;
-    height: 550px;
+    height: 700px;
+
     background-color: #474747;
     color: #fff;
     font-size: 25px;
   }
   
   h1 {
+    padding: 15px 0px;
     background-color: #161616;
-  
+    font-size:2rem;
     color: #fff;
     text-align: center;
   }
