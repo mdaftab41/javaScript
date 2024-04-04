@@ -82,8 +82,12 @@
     // Append additional text without overwriting existing content
     div2.appendChild(document.createTextNode("Hello bro how are you"));
     document.body.appendChild(div2);
+    // taking a flag
+    let stylesApplied = false;
     function colorChange() {
-      document.querySelector(".body").style.backgroundColor = "white";
+      stylesApplied = !stylesApplied;
+      if(stylesApplied) {
+        document.querySelector(".body").style.backgroundColor = "white";
       div2.style.backgroundColor = "white";
       div2.style.color = "black";
       const images = document.querySelectorAll("img");
@@ -91,7 +95,20 @@
       images.forEach((img) => {
         img.style.border = "2px solid black";
         img.style.boxShadow = "2px 2px 5px rgba(0, 0, 0, 0.5)";
+        img.style.borderRadius="8px"
       });
+      }else{
+        document.querySelector(".body").style.backgroundColor = "black";
+      div2.style.backgroundColor = "black";
+      div2.style.color = "white";
+      const images = document.querySelectorAll("img");
+
+      images.forEach((img) => {
+        img.style.border = " 1px solid #ccc ";
+        img.style.boxShadow = " 0 4px 8px rgba(0, 0, 0, 0.1)";
+        img.style.borderRadius="8px"
+      });
+      }
     }
     //console.log(onclick());
 
