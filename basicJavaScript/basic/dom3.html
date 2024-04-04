@@ -14,20 +14,27 @@
         overflow: hidden;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease;
+        
       }
-  
+
       .card img {
         width: 100%;
-        height: auto;
+        height: 16rem;
       }
-  
+
       /* CSS for the card animation when clicked */
       .card.active {
         transform: scale(1.05);
       }
+      .image-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: start; /* Optional: Align items horizontally */
+      gap: 1rem; /* Optional: Set gap between images */
+    }
     </style>
   </head>
-  
+
   <body style="background-color: black; color: white" class="body"></body>
   <script>
     const div = document.createElement("div"); // create element in body or in html document
@@ -80,15 +87,23 @@
       div2.style.backgroundColor = "white";
       div2.style.color = "black";
       const images = document.querySelectorAll("img");
-   
-      images.forEach(img => {
-    img.style.border = "2px solid black";
-    img.style.boxShadow = "2px 2px 5px rgba(0, 0, 0, 0.5)";
-  });
+
+      images.forEach((img) => {
+        img.style.border = "2px solid black";
+        img.style.boxShadow = "2px 2px 5px rgba(0, 0, 0, 0.5)";
+      });
     }
     //console.log(onclick());
 
     const imageUrls = [
+      "https://images.pexels.com/photos/12348994/pexels-photo-12348994.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/20393504/pexels-photo-20393504/free-photo-of-a-woman-taking-a-picture-of-a-cherry-blossom-tree.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/17053939/pexels-photo-17053939/free-photo-of-view-of-st-peters-square-and-basilica-from-via-della-conciliazione-in-rome-italy.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/15119303/pexels-photo-15119303/free-photo-of-high-angle-view-on-rome-italy.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/19404680/pexels-photo-19404680/free-photo-of-st-peters-basilica-dome-over-buildings-in-vatican-and-rome.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/17554347/pexels-photo-17554347/free-photo-of-taxis-in-front-of-palace-in-istanbul.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/19294343/pexels-photo-19294343/free-photo-of-pink-car.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      " https://images.pexels.com/photos/20724235/pexels-photo-20724235/free-photo-of-mountains-and-fog.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       " https://miro.medium.com/max/7296/0*1g9tZFh4tpzUnlhO",
       "https://images.pexels.com/photos/18160095/pexels-photo-18160095/free-photo-of-woman-holding-dog-in-arms.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       " https://images.pexels.com/photos/20187457/pexels-photo-20187457/free-photo-of-nubes-5-salida-no-2.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -99,14 +114,15 @@
     function createImageList() {
       const imageListDiv = document.getElementById("imageList");
       const ul = document.createElement("ul");
+      ul.classList.add("image-list");
 
       // Iterate over image URLs
       imageUrls.forEach((url) => {
         const li = document.createElement("li");
         const img = document.createElement("img");
         img.src = url;
+        img.style.height = "20rem";
         img.style.width = "16rem";
-        img.style.margin="0.5rem 0rem"
         img.classList.add("card"); // Add the 'card' class to the image
         img.addEventListener("mouseover", toggleCard);
         img.addEventListener("mouseout", toggleCard);
