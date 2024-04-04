@@ -14,7 +14,8 @@
             <li><img width="200px" id="river" src=" https://live.staticflickr.com/4110/5086427718_06870ca5d9_b.jpg" alt=""></li>
             <li><img width="200px" id="owl" src="https://images.unsplash.com/photo-1529654674248-a940ce22fe51?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""></li>
             <li><a style="color: aliceblue;" href="https:/ps://th.bing.com/th/id/R.1d8b77786649f352eca392ca48f348d6?rik=6AlDF0gCYhA0nQ&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f07%2fCute-Baby-Animal-Photo-Free-Download.jpg&ehk=0iddreAFFy0Gw6IM6zCsZ1orEWRLt72nnqUnu6831pA%3d&risl=&pid=ImgRaw&r=0" alt="" ></li>
-            <li><img width="200px" id="prayer" src=" https://images.unsplash.com/photo-1562588809-bba40976d53d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" id="google"></a></li>
+            <li><img width="200px" id="prayer" src=" https://images.unsplash.com/photo-1562588809-bba40976d53d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" id=""></a></li>
+            <li><img width="200px" id="google" src="https://www.google.com/" alt="Google"></li>
         </ul>
    </div>
 </body>
@@ -46,18 +47,20 @@
     //     console.log("google clicked");
     // }, false)
    
-    
+    // write code to remove all images
     document.querySelector('#images').addEventListener('click', function(e){
         console.log(e.target.tagName);
         if (e.target.tagName === 'IMG') {
             console.log(e.target.id);
             let removeIt = e.target.parentNode
             removeIt.remove()
+              
+   // removeIt.parentNode.removeChild(removeIt)
         }
     
         
     })
     
-    //removeIt.parentNode.removeChild(removeIt)
+   // removeIt.parentNode.removeChild(removeIt)
 </script>
 </html>
