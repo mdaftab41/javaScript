@@ -4,7 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chai and Code</title>
+    <style>
+      /* CSS for the card design */
+      .card {
+        width: 200px;
+        height: auto;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+  
+      .card img {
+        width: 100%;
+        height: auto;
+      }
+  
+      /* CSS for the card animation when clicked */
+      .card.active {
+        transform: scale(1.05);
+      }
+    </style>
   </head>
+  
   <body style="background-color: black; color: white" class="body"></body>
   <script>
     const div = document.createElement("div"); // create element in body or in html document
@@ -29,8 +52,8 @@
     btn.style.width = "100px";
     btn.style.background = "yellow";
     h1.style.color = "red";
-    btn.id='btnId'
-    btn.addEventListener('click' ,colorChange)
+    btn.id = "btnId";
+    btn.addEventListener("click", colorChange);
     //const btn1 =document.createTextNode("Button");
     const addH1 = document.createTextNode("Welcome from Dom");
     //btn.appendChild(btn1)
@@ -39,9 +62,68 @@
     div.appendChild(h1);
     div.appendChild(btn);
     document.body.appendChild(div);
-   function colorChange(){
-    document.querySelector(".body").style.backgroundColor='white'
-   }
-   //console.log(onclick());
+    //creating a new div
+    const div2 = document.createElement("div");
+    const h = document.createElement("h1");
+    h.textContent = `Units of measurement`;
+    h.style.fontSize = "3em";
+    h.style.margin = "0px 35%";
+    div2.appendChild(h);
+
+    div2.id = "imageList";
+
+    // Append additional text without overwriting existing content
+    div2.appendChild(document.createTextNode("Hello bro how are you"));
+    document.body.appendChild(div2);
+    function colorChange() {
+      document.querySelector(".body").style.backgroundColor = "white";
+      div2.style.backgroundColor = "white";
+      div2.style.color = "black";
+      const images = document.querySelectorAll("img");
+   
+      images.forEach(img => {
+    img.style.border = "2px solid black";
+    img.style.boxShadow = "2px 2px 5px rgba(0, 0, 0, 0.5)";
+  });
+    }
+    //console.log(onclick());
+
+    const imageUrls = [
+      " https://miro.medium.com/max/7296/0*1g9tZFh4tpzUnlhO",
+      "https://images.pexels.com/photos/18160095/pexels-photo-18160095/free-photo-of-woman-holding-dog-in-arms.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      " https://images.pexels.com/photos/20187457/pexels-photo-20187457/free-photo-of-nubes-5-salida-no-2.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      // Add more image URLs as needed
+    ];
+
+    // Function to create and append the image list
+    function createImageList() {
+      const imageListDiv = document.getElementById("imageList");
+      const ul = document.createElement("ul");
+
+      // Iterate over image URLs
+      imageUrls.forEach((url) => {
+        const li = document.createElement("li");
+        const img = document.createElement("img");
+        img.src = url;
+        img.style.width = "16rem";
+        img.style.margin="0.5rem 0rem"
+        img.classList.add("card"); // Add the 'card' class to the image
+        img.addEventListener("mouseover", toggleCard);
+        img.addEventListener("mouseout", toggleCard);
+        li.appendChild(img);
+        ul.appendChild(li);
+      });
+
+      // Append the unordered list to the imageListDiv
+      imageListDiv.appendChild(ul);
+    }
+    // Function to toggle the 'active' class on the clicked image
+    function toggleCard(event) {
+      const clickedImg = event.target;
+      clickedImg.classList.toggle("active", event.type === "mouseover");
+    }
+
+    // Call the function to create and append the image list
+    createImageList();
   </script>
 </html>
