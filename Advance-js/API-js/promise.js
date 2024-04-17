@@ -61,6 +61,8 @@ promiseFour.then((user)=>{
 })
 .catch(function(error){
     console.log(error);
+}).finally(()=>{
+    console.log("The promise is either resolved or reject")// .finally massage is use to give final massage 
 })
 
 // reject  using conditional for ERROR handling
@@ -87,4 +89,6 @@ promiseFour1.then((user)=>{
 })
 .catch(function(error){
     console.log(error);
+}).finally(()=>{
+    console.log("The promise is either resolved or reject")// .finally massage is use to give final massage 
 })
