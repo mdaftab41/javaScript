@@ -62,3 +62,29 @@ promiseFour.then((user)=>{
 .catch(function(error){
     console.log(error);
 })
+
+// reject  using conditional for ERROR handling
+const promiseFour1 = new Promise(function(resolve , reject){
+    setTimeout(function(){
+        let error = true;
+        if(!error){
+            resolve({username:"Md Aftab" , password:"12345"})
+        }else{
+            reject('ERROR:Some Thing went Worng')
+        }
+    })
+})
+
+// promiseFour.then().catch()
+
+// chaning of .then()
+promiseFour1.then((user)=>{
+    console.log(user);
+    return user.username
+})
+.then((username)=>{
+    console.log(username);
+})
+.catch(function(error){
+    console.log(error);
+})
