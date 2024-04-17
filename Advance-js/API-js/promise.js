@@ -40,7 +40,7 @@ promiseThree.then(function(user){
 // reject  using conditional for ERROR handling
 const promiseFour = new Promise(function(resolve , reject){
     setTimeout(function(){
-        let error = true;
+        let error = false;
         if(!error){
             resolve({username:"Md Aftab" , password:"12345"})
         }else{
