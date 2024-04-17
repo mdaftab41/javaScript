@@ -92,3 +92,32 @@ promiseFour1.then((user)=>{
 }).finally(()=>{
     console.log("The promise is either resolved or reject")// .finally massage is use to give final massage 
 })
+
+// async  await in place of .then().catch()
+
+console.log ("promiseFive Start here");
+
+const promiseFive = new Promise(function(resolve , reject){
+    setTimeout(function(){
+        let error = true;
+        if(!error){
+            resolve({username:"Md Aftab" , password:"12345"})
+        }else{
+            reject('ERROR:Some Thing went Worng')
+        }
+    })
+});
+// async   await  not handle error directly
+// async function consumeFive(){
+//    const consume = await promiseFive;
+//    console.log(consume) ;
+// }
+async function consumeFive(){
+  try {
+    const consume = await promiseFive;
+   console.log(consume) ;
+} catch (error){
+    console.log(error);
+}
+}
+consumeFive();// function call
