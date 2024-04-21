@@ -6,7 +6,13 @@ const user = {
     console.log("Got user details from databs");
     // this keyword: we use this in current context 
     console.log(`Username: ${this.username}`)
+   // printing current context 
+   console.log( "current context")
+    console.log(this)
+
+
     }
+
 }
 console.log(user.username);
 console.log(user.getUserDetail());
