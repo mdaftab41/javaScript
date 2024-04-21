@@ -13,4 +13,9 @@ fetch('https://jsonplaceholder.typicode.com/posts',  option)
   .then((response) => response.json())
   .then((json) => console.log(json));
 
+
+  fetch(' https://jsonplaceholder.typicode.com/albums/1/photos')
+  .then((response) => response.json())
+  .then((json) => console.log(json));
+
    
