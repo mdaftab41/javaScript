@@ -20,6 +20,7 @@ console.log(user.getUserDetail());
 console.log(this)
 
 // constructer function 
+// constructor function give new instance each time 
 console.log("constructer function ")
 
 function User( username , loginCount , isLoggedIn ){
@@ -27,7 +28,7 @@ function User( username , loginCount , isLoggedIn ){
     this.loginCount = loginCount,
     this.isLoggedIn = isLoggedIn
     // we return the this to pass object if you not pass this then it pass a empty object
-   // return this
+    return this
 }
 // user2 overwrite the value of user two so we use newKeyword
 
