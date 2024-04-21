@@ -16,3 +16,5 @@ const user = {
 }
 console.log(user.username);
 console.log(user.getUserDetail());
+// this in global context 
+console.log(this)
