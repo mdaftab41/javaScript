@@ -28,3 +28,15 @@ myHero.mdAlam()
 //heroPower.mdAlam() // no access  
 
 
+// removing white space  using prototype 
+
+let AnotherUser = "          Md Aftab Alam                        ";
+String.prototype.trueLength = function(){
+    console.log(`${this}`)// give  Md Aftab Alam   
+    
+    console.log(`True length is : ${this.trim().length}`);
+}
+
+AnotherUser.trueLength()
+"Parshant".trueLength()
+"Parth".trueLength()
