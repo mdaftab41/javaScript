@@ -18,5 +18,33 @@ const obj = {
   const descriptor = Object.getOwnPropertyDescriptor(obj, 'name');
   
   console.log(descriptor);
+
+  // Math.pi operation 
+  console.log(Math.PI)
+  Math.PI=123
+  console.log(Math.PI)// we cant able to change due to writable property is false
+
+  console.log("Math.pi operation ")
+
+   const Descripter = Object .getOwnPropertyDescriptor(Math , "PI")
+   console.log( Descripter);
+
+   // Adding same protery to our object 
+   const myObj = {
+     name:"Aftab Alam",
+     RollNo: 41,
+     isAvailable:true
+   }
    
+   console.log(myObj);
+   console.log("PropertyDescriptor  is :")
+   console.log(Object .getOwnPropertyDescriptor(myObj , "name"))
+   // Adding getOwnPropertyDescriptor
+   Object.defineProperty(myObj , "name",{
+    writable: false,
+    enumerable: false,
+    configurable: false
+   })
+   myObj.name="Md Aftab Alam";// not modifing 
+   console.log(Object .getOwnPropertyDescriptor(myObj , "name"))
   
