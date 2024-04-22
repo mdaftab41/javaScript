@@ -8,6 +8,7 @@
 <body>
     <!-- Button to be clicked -->
     <button> Button Clicked</button>
+    <p>Count: <span id="countDisplay">0</span></p>
 </body>
 <script> 
 // Define the React class
@@ -16,6 +17,7 @@ class React {
         // Setting up initial properties
         this.library = "React"; // Library name
         this.server = "https://localhost:300"; // Server URL
+        this.count=0;
 
         // Requirement: Adding an event listener to the button
         // Binding the context of 'this' to the handleClick method
@@ -27,6 +29,8 @@ class React {
     // Method to handle button click
     handleClick(){
         console.log("button clicked");
+        console.log("Current count:", ++this.count);
+        document.getElementById('countDisplay').textContent = this.count;
         console.log(this.server); // Accessing server property
     }
 }
