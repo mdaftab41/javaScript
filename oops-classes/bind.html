@@ -6,26 +6,32 @@
     <title>React</title>
 </head>
 <body>
+    <!-- Button to be clicked -->
     <button> Button Clicked</button>
 </body>
 <script> 
+// Define the React class
 class React {
     constructor(){
-        this.library = "React"
-        this.server = "https://localhost:300"
+        // Setting up initial properties
+        this.library = "React"; // Library name
+        this.server = "https://localhost:300"; // Server URL
 
-        //Requirement 
+        // Requirement: Adding an event listener to the button
+        // Binding the context of 'this' to the handleClick method
         document
-        .querySelector('button')
-        .addEventListener('click' , this.handleClick.this.bind() )
+            .querySelector('button') // Selecting the button
+            .addEventListener('click' , this.handleClick.bind(this)); // Binding 'this' to maintain the context
     }
 
+    // Method to handle button click
     handleClick(){
-    console.log("button clicked");
-    console.log(this.server)
+        console.log("button clicked");
+        console.log(this.server); // Accessing server property
     }
 }
 
+// Creating an instance of the React class
 const app = new React();
 
 </script>
