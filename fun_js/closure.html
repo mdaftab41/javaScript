@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function init() {
+        let name = "Mozilla"; // name is a local variable created by init
+        function displayName() {
+          // displayName() is the inner function, that forms the closure
+          console.log(name); // use variable declared in the parent function
+        }
+        displayName();
+      }
+      init();
+
+
+      
+    function outer(){
+        let username='Aftab'
+        function inner(){
+            let ani="Goat"
+            console.log("inner" , username)//inner function can access property of outer function
+        }
+
+        function inner2(){
+            console.log("inner" , username)//inner function can access property of outer function
+            //console.log("outer",ani) //due to local scope(bracket scope)
+        }
+        inner2()
+        inner();
+        //console.log("outer",ani) //outer function cant access property of inner function
+    }
+    outer();
+   // console.log("outer" , username)
+    </script>
+  </body>
+</html>
