@@ -3,10 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>closure</title>
   </head>
   <body>
-    <script>
+    <button id ="orange"> Orange</button>
+    <button id="green"> green</button>
+    <script> 
+        //Lexical scoping
       function init() {
         let name = "Mozilla"; // name is a local variable created by init
         function displayName() {
@@ -18,7 +21,7 @@
       init();
 
 
-      
+
     function outer(){
         let username='Aftab'
         function inner(){
@@ -36,6 +39,40 @@
     }
     outer();
    // console.log("outer" , username)
+
+
+   //closure  
+   function makeFunc() {
+  const name = "Mozilla";
+  function displayName() {
+    console.log(name);
+  }
+  return displayName;//passing referece of function
+  //function call pass complete lexical scope 
+}
+
+const myFunc = makeFunc();
+myFunc();
+
+    </script> 
+    <script>   
+   
+    // document.getElementById("orange").onclick = function(){
+    //     document.body.style.backgroundColor = 'orange';
+    // };
+    // document.getElementById("green").onclick = function(){
+    //     document.body.style.backgroundColor = 'green';
+    // };
+    function clickHandler(color){
+       // document.body.style.backgroundColor =  `${color}`; //execute the function directly
+      return function(){
+        document.body.style.backgroundColor =  `${color}`;
+       }
+    }
+    document.getElementById("orange").onclick =clickHandler('orange')
+    document.getElementById("green").onclick =clickHandler('green')
+  
+
     </script>
   </body>
 </html>
