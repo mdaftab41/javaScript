@@ -16,7 +16,7 @@ redColor.addEventListener("click", function () {
   itemTag.style.backgroundColor = "red";
   imageCard.style.backgroundImage = 'url("./img/red-benz.webp")';
 });
-
+// color: 
 // - Gray Color
 grayColor[0].addEventListener("click", function () {
   cartButton.style.backgroundColor = "gray";
