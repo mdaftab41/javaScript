@@ -1,4 +1,5 @@
 const clock = document.getElementById("clock");
+// comment  selector
 //const clock=document.querySelector('.#clock')
 //setInterval(function(){} , interva in milisecond)
 setInterval(function () {
