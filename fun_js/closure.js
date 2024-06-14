@@ -92,7 +92,7 @@ function showHelp(help) {
   */
   
   referenceObject.value++;
-  
+  // colling function
   foo(4);
   /*
     num: 8
