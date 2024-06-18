@@ -14,3 +14,19 @@ console.log(typeof null) //object
 //"33"=> 33
 // "33dd"=>Nan
 //true=> 1
+//! Here are more examples
+console.log(parseInt("123"));
+// 123 (default base-10)
+console.log(parseInt("123", 10));
+// 123 (explicitly specify base-10)
+console.log(parseInt("   123 "));
+// 123 (whitespace is ignored)
+console.log(parseInt("077"));
+// 77 (leading zeros are ignored)
+console.log(parseInt("1.9"));
+// 1 (decimal part is truncated)
+
+//! When we will not get an Output
+console.log(parseInt("&123"));
+console.log(parseInt("-123"));
+console.log(parseInt("xyz"));
