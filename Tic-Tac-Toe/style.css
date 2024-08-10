@@ -30,7 +30,41 @@ body{
     box-shadow: 0 0 1rem rgba(0,0,0,0.3);
     font-size:9vmin;
     color:#e63946;
+    background-color:#fefae0 ;
 }
 #reset{
-    
+  background-color:#023047;
+  color:#ffb703; 
+  border-radius:0.9rem;
+  font-size:1.5rem ;
+  border:none ;
+  padding:0.5rem;
+  box-shadow:0 0 0.5rem #780000;
+}
+#new{
+    background-color:#023047;
+    color:#ffb703; 
+    border-radius:0.9rem;
+    font-size:1.5rem ;
+    border:none ;
+    padding:0.5rem;
+    box-shadow:0 0 0.5rem #780000;
+}
+
+#winner{
+    font-size:2rem ;
+    background-color:#fdf0d5 ;
+    color:#c1121f;
+    width:10rem ;
+    margin:0.5rem auto ;
+    border-radius:0.5rem;
+    border:none ;
+    padding:0.5rem;
+}
+.msg{
+    margin:1rem 0;
+     
+}
+.hide{
+    display:none ;
 }
