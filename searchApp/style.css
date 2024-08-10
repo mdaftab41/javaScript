@@ -75,3 +75,15 @@ form{
     text-transform: capitalize;
     text-align:center;
 }
+#show-more-btn{
+    background-color:#008cba ;
+    font-size:18px ;
+    border:none;
+    color:#fff;
+    padding:10px 20px;
+    text-align:center;
+    margin:30px auto;
+    border-radius:5px;
+    cursor:pointer:
+    display:none;
+}
