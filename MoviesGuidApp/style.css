@@ -53,6 +53,65 @@ main section{
     align-items:center ;
     min-height:70vh ;
 }
+
+.movie-container{
+display:flex;
+justify-container:center;
+background:#fff ;
+box-shadow:0 0 10px #ccc ;
+width:80% ;
+border-radius:5px;
+}
+
+.movie-poster img{
+    height:450px ;
+    margin-right:30px ;
+    border-radius:5px 0 0 5px;
+
+}
+.movie-info{
+    padding-inline:15px;
+}
+.movie-info h2{
+    text-align:center;
+    font-size:32px;
+    margin:20px 0 12px 0 ;
+
+}
+.movie-info h2+p{
+    text-align:center;
+}
+
+.movie-info .movie-genre{
+    display:flex;
+    justify-content:center ;
+    text-align:center;
+    margin-block:5px;
+}
+
+.movie-info p{
+    font-size:18px;
+    margin-block:16px;
+    line-height:20px;
+}
+
+.movie-info .movie-genre p{
+background:#232f3e ;
+color:#fff ;
+padding:5px 14px;
+margin-inline:5px;
+border:2px solid #0000;
+border-radius:6px;
+font-weight:700;
+}
+
+.movie-container.noBackbround{
+    background:none;
+    box-shadow:none;
+}
+
+
+
 footer{
     text-align:center ;
     background-color:#263238 ;
