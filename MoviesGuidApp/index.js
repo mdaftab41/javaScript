@@ -3,12 +3,19 @@ const movieContainer = document.querySelector('.movie-container') ;
 const inputBox = document.querySelector('.inputBox');
  
 const getMovieInfo = async (movie)=>{
-    const myApiKey="27544902" ;
+     try {
+        const myApiKey="27544902" ;
     const url =`http://www.omdbapi.com/?i=tt3896198&apikey=${myApiKey}&t=${movie}`;
     const response = await fetch(url) ;
+    if(!response.ok){
+        throw new Error("Unable to fetch movie data");
+    }
     const data =  await response.json();
     
     showMovieData(data);
+     } catch (error) {
+        showErrorMessage("No Movie Found");
+     }
 }  
 
 const showMovieData=(data)=>{
@@ -41,7 +48,13 @@ const showMovieData=(data)=>{
     moviePoster.innerHTML = `<img src="${Poster}" alt="Poster">`;
     movieContainer.appendChild(moviePoster);
     movieContainer.appendChild(movieElement);
+    inputBox.value = "";
+}
 
+const showErrorMessage = (massage)=>{
+    movieContainer.innerHTML=`<h2>${massage}</h2>`
+    movieContainer.classList.add('noBackground');
+    inputBox.value = "";
 }
 
 
@@ -49,9 +62,10 @@ searchForm.addEventListener('submit' , (e)=>{
     e.preventDefault() ;
      const movieName = inputBox.value.trim();
      if(movieName !=""){
+        showErrorMessage("Fetching Movie Information.....");
         getMovieInfo(movieName) ;
      }else{
-        movieContainer.innerHTML=`<h2>Enter Valid movie name to get movie information</h2>`
-        movieContainer.classList.add('noBackground');
+        showErrorMessage("Enter valid movie name to get movie information");
      }
 });
+ 

@@ -51,7 +51,7 @@ main section{
     display:flex ;
     justify-content:center ;
     align-items:center ;
-    min-height:70vh ;
+    min-height:90vh ;
 }
 
 .movie-container{
@@ -87,6 +87,7 @@ border-radius:5px;
     justify-content:center ;
     text-align:center;
     margin-block:5px;
+    overflow-x:auto;
 }
 
 .movie-info p{
@@ -113,6 +114,38 @@ font-weight:700;
     align-items: center;
     text-align: center; /* Center-align text inside the container */
     min-height: 200px; 
+}
+
+@media screen and (max-width:950px){
+    .movie-container{
+        flex-direction:column;
+    }
+    .movie-poster img{
+        width:100% ;
+        height:fit-contant ;
+        margin-right:0 ;
+    }
+    .movie-info{
+        padding-inline:30px;
+    }
+}
+@media screen and (max-width:630px){
+    .navbar{
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+    .search-container{
+       margin:10px ; 
+    }
+    .movie-container {
+        width: 100%; /* Full width for very small screens */
+        padding: 5px; /* Remove padding */
+    }
+    main {
+        padding: 0px 10px !important; /* Add padding for main element on small screens */
+    }
+    
 }
 
 
