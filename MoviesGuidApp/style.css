@@ -105,9 +105,14 @@ border-radius:6px;
 font-weight:700;
 }
 
-.movie-container.noBackbround{
-    background:none;
-    box-shadow:none;
+.movie-container.noBackground{
+    background-color:none;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Center-align text inside the container */
+    min-height: 200px; 
 }
 
 
