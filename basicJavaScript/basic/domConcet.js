@@ -16,3 +16,11 @@ body.appendChild(paragraph);
 
 root.appendChild(head);
 root.appendChild(body);
+
+const btn = document.querySelector("button");
+
+function greet(event) {
+  console.log("greet:", event);
+}
+
+btn.onclick = greet;
