@@ -29,3 +29,6 @@ const averaged = numbers
     return Math.round(average * 100) / 100;
   });
 console.log(averaged); // [2, 2.67, 2, 3.33, 5, 5.33, 5.67, 4]
+
+
+//Array form function is use to convert the string int array of character
