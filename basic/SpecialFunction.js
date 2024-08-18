@@ -32,3 +32,8 @@ console.log(averaged); // [2, 2.67, 2, 3.33, 5, 5.33, 5.67, 4]
 
 
 //Array form function is use to convert the string int array of character
+console.log(Array.from('foo'));
+// Expected output: Array ["f", "o", "o"]
+
+console.log(Array.from([1, 2, 3], (x) => x + x));
+// Expected output: Array [2, 4, 6]
