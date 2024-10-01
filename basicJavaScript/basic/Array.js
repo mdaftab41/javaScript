@@ -37,6 +37,8 @@ console.log(Array.from("mdaftabalam"))
 const score1=100
 const score2=200
 const score3=300
-console.log(Array.of(score1 , score2, score3));
+const score4=400
+const score5=500
+console.log(Array.of(score1 , score2, score3 ,score4 ,score5));
 
 
