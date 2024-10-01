@@ -9,6 +9,7 @@ myarr.pop();// remove value from last
 console.log(myarr);
 myarr.unshift(8);// add value in first position
 console.log(myarr);
+console.log(myarr);
 myarr.shift();// remove value from first position
 console.log(myarr);
 const myher=["aftab" , "parth", "parshant"] 
