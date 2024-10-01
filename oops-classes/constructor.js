@@ -126,6 +126,8 @@ function Car(make, model, year) {
   //   newInstance --> Square.prototype --> Polygon.prototype
   console.log(newInstance instanceof Polygon); // true
   console.log(newInstance instanceof Rectangle); // false
+  console.log(newInstance instanceof Square); // true
+  console.log(newInstance instanceof Tringle); // false
   
   // However, because super() calls Rectangle as constructor, the name property
   // of newInstance is initialized with the logic in Rectangle
