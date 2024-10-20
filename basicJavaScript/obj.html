@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Student Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        #student-form, #update-form {
+            margin: 20px 0;
+        }
+        input {
+            margin: 5px;
+        }
+        #student-list, #student-properties {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Management System</h1>
+    
+    <div id="student-form">
+        <h2>Add New Student</h2>
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="number" id="age" placeholder="Age" required>
+        <input type="text" id="major" placeholder="Major" required>
+        <input type="text" id="year" placeholder="Year" required>
+        <input type="number" step="0.1" id="gpa" placeholder="GPA" required>
+        <button onclick="addStudent()">Add Student</button>
+    </div>
+
+    <div id="update-form">
+        <h2>Update Student GPA</h2>
+        <input type="text" id="update-name" placeholder="Student Name" required>
+        <input type="number" step="0.1" id="update-gpa" placeholder="New GPA" required>
+        <button onclick="updateStudentGPA()">Update GPA</button>
+    </div>
+
+    <button onclick="displayStudentProperties()">Display Student Properties</button>
+    <div id="student-properties"></div>
+
+    <div id="student-list"></div>
+
+    <script>
+        // Creating an array of student objects
+        const students = [
+            { name: 'Alice', age: 20, major: 'Computer Science', year: 'Sophomore', gpa: 3.8 },
+            { name: 'Bob', age: 22, major: 'Mathematics', year: 'Senior', gpa: 3.5 },
+            { name: 'Charlie', age: 23, major: 'Physics', year: 'Senior', gpa: 3.9 },
+            { name: 'David', age: 21, major: 'Chemistry', year: 'Junior', gpa: 3.6 }
+        ];
+
+        // Function to display student information
+        function displayStudents() {
+            const studentListDiv = document.getElementById('student-list');
+            studentListDiv.innerHTML = ''; // Clear previous content
+
+            students.forEach((student, index) => {
+                const studentInfo = document.createElement('p');
+                studentInfo.textContent = `Student ${index + 1}: ${student.name}`;
+                studentListDiv.appendChild(studentInfo);
+            });
+        }
+
+        // Function to add a new student
+        function addStudent() {
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const major = document.getElementById('major').value;
+            const year = document.getElementById('year').value;
+            const gpa = parseFloat(document.getElementById('gpa').value);
+
+            const newStudent = { name, age, major, year, gpa };
+            students.push(newStudent); // Add new student to the array
+            displayStudents(); // Refresh the display
+            clearForm();
+        }
+
+        // Function to update a student's GPA
+        function updateStudentGPA() {
+            const name = document.getElementById('update-name').value;
+            const newGPA = parseFloat(document.getElementById('update-gpa').value);
+            const student = students.find(s => s.name === name);
+
+            if (student) {
+                student.gpa = newGPA; // Update GPA
+                displayStudents(); // Refresh the display
+                clearUpdateForm();
+            } else {
+                alert('Student not found.');
+            }
+        }
+
+        // Function to display all student properties
+        function displayStudentProperties() {
+            const studentPropertiesDiv = document.getElementById('student-properties');
+            studentPropertiesDiv.innerHTML = ''; // Clear previous content
+
+            students.forEach((student, index) => {
+                const properties = document.createElement('p');
+                properties.textContent = `Student ${index + 1}: 
+                    Name: ${student.name}, 
+                    Age: ${student.age}, 
+                    Major: ${student.major}, 
+                    Year: ${student.year}, 
+                    GPA: ${student.gpa}`;
+                studentPropertiesDiv.appendChild(properties);
+            });
+        }
+
+        // Function to clear input fields after adding a student
+        function clearForm() {
+            document.getElementById('name').value = '';
+            document.getElementById('age').value = '';
+            document.getElementById('major').value = '';
+            document.getElementById('year').value = '';
+            document.getElementById('gpa').value = '';
+        }
+
+        // Function to clear input fields after updating a student
+        function clearUpdateForm() {
+            document.getElementById('update-name').value = '';
+            document.getElementById('update-gpa').value = '';
+        }
+
+        // Initial display of students
+        displayStudents();
+    </script>
+</body>
+</html>
+ 
