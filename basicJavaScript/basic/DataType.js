@@ -14,3 +14,22 @@ console.log(typeof null) //object
 //"33"=> 33
 // "33dd"=>Nan
 //true=> 1
+
+let ag = 25;                      // Number
+let nam = "Alice";                // String
+let isStudent = true;              // Boolean
+let x;                             // Undefined
+let car = null;                    // Null
+let uniqueId = Symbol('id');       // Symbol
+let largeNum = 9007199254740991n;  // BigInt
+
+let person = {                     // Object
+    nam: "Alice",
+    ag: 25
+};
+
+let numbers = [1, 2, 3];           // Array
+
+function greet() {                 // Function
+    return "Hello!";
+}
