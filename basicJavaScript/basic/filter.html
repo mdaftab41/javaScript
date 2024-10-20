@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Example</title>
+</head>
+<body>
+    <h2>Filter Even Numbers</h2>
+
+    <button id="filterButton">Filter Even Numbers</button>
+    <p id="output"></p>
+
+    <script>
+        // Example array of numbers
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        // Function to filter even numbers
+        function filterEvenNumbers() {
+            const evenNumbers = numbers.filter(function(number) {
+                return number % 2 === 0; // Condition to keep only even numbers
+            });
+
+            // Display the filtered array
+            document.getElementById('output').textContent = 'Even numbers: ' + evenNumbers.join(', ');
+        }
+
+        // Add event listener to the button to trigger the filtering
+        document.getElementById('filterButton').addEventListener('click', filterEvenNumbers);
+    </script>
+</body>
+</html>
